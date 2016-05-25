@@ -1,7 +1,13 @@
 <div class="page-header">
 	<h1>
 		<a href="<%= @link.url %>"><%= @link.title %></a><br>
-		<small>Submitted by <%= @link.user.email %></small>
+		<small>Submitted by 
+			<% if @link.user.name == nil  %>
+			<%= @link.user.email %> 
+			<% else %>
+			<%= @link.user.name %> 
+			<% end %>
+		</small>
 	</h1>
 </div>
 <div class="btn-group">
